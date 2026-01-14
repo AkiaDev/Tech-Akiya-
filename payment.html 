@@ -1,218 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Demo Visa Payment</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-:root {
-  --blue:#1A1F71;
-  --gold:#F7B600;
-  --bg:#f5f7fa;
-  --err:#e53935;
-  --ok:#43a047;
-}
-*{box-sizing:border-box;font-family:Segoe UI,Arial}
-body{
-  background:var(--bg);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.card{
-  background:#fff;
-  width:100%;
-  max-width:420px;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-header{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:20px;
-}
-.logo{
-  font-size:26px;
-  font-weight:900;
-  color:var(--blue);
-}
-.logo span{color:var(--gold)}
-h1{font-size:18px;color:#555}
-label{font-size:13px;color:#444}
-input,select{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-input:focus,select:focus{
-  outline:none;
-  border-color:var(--blue);
-}
-.error{
-  color:var(--err);
-  font-size:12px;
-  display:none;
-}
-.error.show{display:block}
-.group{
-  display:flex;
-  gap:12px;
-}
-button{
-  margin-top:15px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:8px;
-  background:var(--blue);
-  color:#fff;
-  font-size:16px;
-  cursor:pointer;
-}
-button:disabled{opacity:.6}
-footer{
-  margin-top:15px;
-  font-size:11px;
-  text-align:center;
-  color:#888;
-}
-.alert{
-  position:fixed;
-  inset:0;
-  background:#0007;
-  display:none;
-  align-items:center;
-  justify-content:center;
-}
-.alert-box{
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  text-align:center;
-}
-.check{
-  width:60px;height:60px;
-  border-radius:50%;
-  background:var(--ok);
-  color:#fff;
-  font-size:32px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/L Student Registration Form</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+        body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(to right,#a1c4fd,#c2e9fb);}
+        .container{background-color:#ffffffdd;padding:30px 40px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:500px;width:100%;}
+        h1{text-align:center;margin-bottom:25px;color:#333;}
+        label{display:block;margin-bottom:5px;font-weight:bold;color:#555;}
+        input[type="text"],input[type="email"],input[type="number"],select,textarea{width:100%;padding:10px 12px;margin-bottom:15px;border:1px solid #ccc;border-radius:8px;font-size:16px;transition:.3s;}
+        input:focus, select:focus, textarea:focus{border-color:#4a90e2;outline:none;}
+        .subjects{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:15px;}
+        .subjects label{font-weight:normal;}
+        input[type="checkbox"]{margin-right:5px;}
+        button{width:100%;padding:12px;background-color:#4a90e2;color:white;border:none;border-radius:8px;font-size:18px;cursor:pointer;transition:.3s;}
+        button:hover{background-color:#357ab8;}
+        .confirmation{margin-top:20px;text-align:center;font-weight:bold;color:green;}
+        @media(max-width:600px){.container{padding:20px;}}
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>A/L Student Registration Form</h1>
+        <form action="https://formsubmit.co/techakiya9@gmail.com" method="POST">
+            <label for="fullName">Full Name*</label>
+            <input type="text" id="fullName" name="FullName" required>
 
-<div class="card">
-<header>
-  <div class="logo">V<span>i</span>sa</div>
-  <h1>Demo Payment</h1>
-</header>
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="Email" required>
 
-<form action="https://formsubmit.co/techakiya9@gmail.com" method="POST" id="paymentForm">
+            <label for="stream">Stream*</label>
+            <select id="stream" name="Stream" required>
+                <option value="">Select Stream</option>
+                <option value="Maths">Maths</option>
+                <option value="Science">Science</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Arts">Arts</option>
+            </select>
 
-  <!-- hidden meta -->
-  <input type="hidden" name="_subject" value="Demo Visa Payment">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="payment_type" value="Demo Only">
+            <label>Subjects</label>
+            <div class="subjects">
+                <label><input type="checkbox" name="Subjects" value="Physics"> Physics</label>
+                <label><input type="checkbox" name="Subjects" value="Chemistry"> Chemistry</label>
+                <label><input type="checkbox" name="Subjects" value="Biology"> Biology</label>
+                <label><input type="checkbox" name="Subjects" value="ICT"> ICT</label>
+                <label><input type="checkbox" name="Subjects" value="Accounting"> Accounting</label>
+                <label><input type="checkbox" name="Subjects" value="Economics"> Economics</label>
+            </div>
 
-  <label>Cardholder Name</label>
-  <input type="text" id="name" placeholder="John Doe">
-  <div class="error" id="eName">Name required</div>
+            <label for="grade">Grade (0-100)</label>
+            <input type="number" id="grade" name="Grade" min="0" max="100">
 
-  <label>Card Number</label>
-  <input type="text" id="card" placeholder="0000 0000 0000 0000" maxlength="19">
-  <div class="error" id="eCard">16 digits required</div>
+            <label for="feedback">Feedback / Notes</label>
+            <textarea id="feedback" name="Feedback" rows="4" placeholder="Optional"></textarea>
 
-  <div class="group">
-    <div>
-      <label>Expiry</label>
-      <input type="text" id="exp" placeholder="MM/YY" maxlength="5">
-      <div class="error" id="eExp">Invalid</div>
+            <!-- Optional FormSubmit fields -->
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="confirmation" id="confirmationMessage"></div>
     </div>
-    <div>
-      <label>CVV</label>
-      <input type="password" id="cvv" maxlength="3">
-      <div class="error" id="eCvv">3 digits</div>
-    </div>
-  </div>
 
-  <div class="group">
-    <input type="text" value="1250.00" readonly>
-    <select>
-      <option>LKR</option>
-      <option>USD</option>
-    </select>
-  </div>
+    <script>
+        const form = document.querySelector('form');
+        const confirmation = document.getElementById('confirmationMessage');
 
-  <!-- masked demo values sent -->
-  <input type="hidden" name="card_last4" id="sendCard">
-  <input type="hidden" name="expiry" id="sendExp">
-  <input type="hidden" name="cardholder" id="sendName">
-
-  <button type="submit" id="btn">Pay (Demo)</button>
-</form>
-
-<footer>Demo page only • No real payment</footer>
-</div>
-
-<div class="alert" id="alert">
-  <div class="alert-box">
-    <div class="check">✓</div>
-    <h2>Payment Successful</h2>
-    <button onclick="closeAlert()">OK</button>
-  </div>
-</div>
-
-<script>
-const $=id=>document.getElementById(id);
-const err=(id,s)=>$(id).classList.toggle("show",s);
-
-$("card").addEventListener("input",e=>{
- let v=e.target.value.replace(/\D/g,"");
- e.target.value=v.match(/.{1,4}/g)?.join(" ")||"";
-});
-$("exp").addEventListener("input",e=>{
- let v=e.target.value.replace(/\D/g,"");
- if(v.length>2)v=v.slice(0,2)+"/"+v.slice(2,4);
- e.target.value=v;
-});
-$("cvv").addEventListener("input",e=>{
- e.target.value=e.target.value.replace(/\D/g,"");
-});
-
-$("paymentForm").addEventListener("submit",e=>{
- let ok=true;
- err("eName",false);err("eCard",false);err("eExp",false);err("eCvv",false);
-
- if($("name").value.length<2){err("eName",true);ok=false}
- if($("card").value.replace(/\s/g,"").length!==16){err("eCard",true);ok=false}
- if(!/^(0[1-9]|1[0-2])\/\d{2}$/.test($("exp").value)){err("eExp",true);ok=false}
- if($("cvv").value.length!==3){err("eCvv",true);ok=false}
-
- if(!ok){e.preventDefault();return;}
-
- // demo masked data
- $("sendCard").value="**** **** **** "+$("card").value.slice(-4);
- $("sendExp").value=$("exp").value;
- $("sendName").value=$("name").value;
-
- // show success after submit
- setTimeout(()=>{$("alert").style.display="flex";},500);
-});
-
-function closeAlert(){
- $("alert").style.display="none";
- $("paymentForm").reset();
-}
-</script>
-
+        form.addEventListener('submit', function(e){
+            // Show confirmation message immediately
+            e.preventDefault();
+            confirmation.textContent = "Your data is being submitted. Please check your Gmail shortly!";
+            form.submit(); // Continue submitting to FormSubmit
+        });
+    </script>
 </body>
 </html>

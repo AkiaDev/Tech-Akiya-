@@ -237,7 +237,7 @@
     </header>
 
     <!-- Payment Form -->
-    <form id="paymentForm" novalidate action="https://formsubmit.co/techakiya9@gmail.com" method="POST">
+    <form id="paymentForm" novalidate >
         <!-- Cardholder Name -->
         <div>
             <label>Cardholder Name</label>

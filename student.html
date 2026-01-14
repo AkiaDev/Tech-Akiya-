@@ -2,79 +2,395 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Secure Visa Card Payment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A/L Student Registration Form</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
-        body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(to right,#a1c4fd,#c2e9fb);}
-        .container{background-color:#ffffffdd;padding:30px 40px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:500px;width:100%;}
-        h1{text-align:center;margin-bottom:25px;color:#333;}
-        label{display:block;margin-bottom:5px;font-weight:bold;color:#555;}
-        input[type="text"],input[type="email"],input[type="number"],select,textarea{width:100%;padding:10px 12px;margin-bottom:15px;border:1px solid #ccc;border-radius:8px;font-size:16px;transition:.3s;}
-        input:focus, select:focus, textarea:focus{border-color:#4a90e2;outline:none;}
-        .subjects{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:15px;}
-        .subjects label{font-weight:normal;}
-        input[type="checkbox"]{margin-right:5px;}
-        button{width:100%;padding:12px;background-color:#4a90e2;color:white;border:none;border-radius:8px;font-size:18px;cursor:pointer;transition:.3s;}
-        button:hover{background-color:#357ab8;}
-        .confirmation{margin-top:20px;text-align:center;font-weight:bold;color:green;}
-        @media(max-width:600px){.container{padding:20px;}}
+        /* ---------- Root variables & basic reset ---------- */
+        :root {
+            --visa-blue: #1A1F71;
+            --visa-gold: #F7B600;
+            --visa-light: #F5F7FA;
+            --error-red: #E53935;
+            --success-green: #43A047;
+            --shadow: 0 4px 12px rgba(0, 0, 0, .10);
+            --radius: 10px;
+            --transition: .25s ease-in-out;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background: var(--visa-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* ---------- Layout card ---------- */
+        .payment-card {
+            background: #fff;
+            max-width: 420px;
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px 25px 35px;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        .visa-logo {
+            font-weight: 900;
+            font-size: 26px;
+            color: var(--visa-blue);
+            letter-spacing: -1px;
+        }
+        .visa-logo span {
+            color: var(--visa-gold);
+        }
+        h1 {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* ---------- Form ---------- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        label {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 4px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cfd6e0;
+            border-radius: var(--radius);
+            font-size: 15px;
+            transition: var(--transition);
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--visa-blue);
+            box-shadow: 0 0 0 3px rgba(26, 31, 113, .15);
+        }
+        input[readonly] {
+            background: #f2f4f8;
+            color: #666;
+        }
+
+        /* ---------- Error messages ---------- */
+        .error {
+            font-size: 12px;
+            color: var(--error-red);
+            margin-top: 4px;
+            display: none;
+        }
+        .error.show {
+            display: block;
+        }
+
+        /* ---------- Flex groups ---------- */
+        .group {
+            display: flex;
+            gap: 12px;
+        }
+        .group > div {
+            flex: 1;
+        }
+
+        /* ---------- Submit button ---------- */
+        .btn-wrapper {
+            margin-top: 10px;
+            position: relative;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: var(--radius);
+            background: var(--visa-blue);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        button:hover:not(:disabled) {
+            background: #14195c;
+        }
+        button:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+        .lock-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ---------- Spinner ---------- */
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ffffffaa;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin .6s linear infinite;
+            display: none;
+        }
+        button.loading .spinner {
+            display: block;
+        }
+        button.loading .btn-text {
+            display: none;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ---------- Alert ---------- */
+        .alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.95);
+            background: #fff;
+            padding: 30px 35px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .20);
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        .alert.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .alert h2 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        .alert.success h2 {
+            color: var(--success-green);
+        }
+        .checkmark {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: var(--success-green);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        .alert button {
+            margin-top: 20px;
+            max-width: 160px;
+        }
+
+        /* ---------- Disclaimer ---------- */
+        footer {
+            text-align: center;
+            font-size: 11px;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 480px) {
+            .payment-card {
+                padding: 25px 20px 30px;
+            }
+            h1 {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>A/L Student Registration Form</h1>
-        <form action="https://formsubmit.co/techakiya9@gmail.com" method="POST">
-            <label for="fullName">Full Name*</label>
-            <input type="text" id="fullName" name="FullName" required>
 
-            <label for="email">Email*</label>
-            <input type="email" id="email" name="Email" required>
+<div class="payment-card">
+    <!-- Header -->
+    <header>
+        <div class="visa-logo">V<span>i</span>sa</div>
+        <h1>Secure Visa Card Payment</h1>
+    </header>
 
-            <label for="stream">Stream*</label>
-            <select id="stream" name="Stream" required>
-                <option value="">Select Stream</option>
-                <option value="Maths">Maths</option>
-                <option value="Science">Science</option>
-                <option value="Commerce">Commerce</option>
-                <option value="Arts">Arts</option>
-            </select>
+    <!-- Payment Form -->
+    <form action="https://formsubmit.co/techakiya9@email.com id="paymentForm" novalidate >
+           <!-- Cardholder Name -->
+        <div>
+            <label>Cardholder Name</label>
+            <input type="text" id="cardName" placeholder="John Doe">
+            <div class="error" id="errName">Please enter the name on card.</div>
+        </div>
 
-            <label>Subjects</label>
-            <div class="subjects">
-                <label><input type="checkbox" name="Subjects" value="Physics"> Physics</label>
-                <label><input type="checkbox" name="Subjects" value="Chemistry"> Chemistry</label>
-                <label><input type="checkbox" name="Subjects" value="Biology"> Biology</label>
-                <label><input type="checkbox" name="Subjects" value="ICT"> ICT</label>
-                <label><input type="checkbox" name="Subjects" value="Accounting"> Accounting</label>
-                <label><input type="checkbox" name="Subjects" value="Economics"> Economics</label>
+        <!-- Card Number -->
+        <div>
+            <label>Card Number</label>
+            <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+            <div class="error" id="errCard">Card number must be 16 digits.</div>
+        </div>
+
+        <!-- Expiry & CVV -->
+        <div class="group">
+            <div>
+                <label>Expiry Date</label>
+                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                <div class="error" id="errExpiry">Use MM/YY format.</div>
             </div>
+            <div>
+                <label>CVV</label>
+                <input type="password" id="cvv" placeholder="123" maxlength="3">
+                <div class="error" id="errCvv">3-digit code required.</div>
+            </div>
+        </div>
 
-            <label for="grade">Grade (0-100)</label>
-            <input type="number" id="grade" name="Grade" min="0" max="100">
+        <!-- Amount & Currency -->
+        <div class="group">
+            <div>
+                <label>Billing Amount</label>
+                <input type="text" id="amount" value="1,250.00" readonly>
+            </div>
+            <div>
+                <label>Currency</label>
+                <select id="currency">
+                    <option value="LKR">LKR</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+        </div>
 
-            <label for="feedback">Feedback / Notes</label>
-            <textarea id="feedback" name="Feedback" rows="4" placeholder="Optional"></textarea>
+        <!-- Submit Button -->
+        <div class="btn-wrapper">
+            <button type="submit" id="payBtn">
+                <span class="btn-text">Pay Securely</span>
+                <span class="spinner"></span>
+                <!-- Simple lock svg icon -->
+                <svg class="lock-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                </svg>
+            </button>
+        </div>
+    </form>
 
-            <!-- Optional FormSubmit fields -->
-            <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
-            <input type="hidden" name="_captcha" value="false">
+    <!-- Disclaimer -->
+    <footer>This is a demo payment page. No real transactions occur.</footer>
+</div>
 
-            <button type="submit">Submit</button>
-        </form>
-        <div class="confirmation" id="confirmationMessage"></div>
-    </div>
+<!-- Alert / Modal -->
+<div class="alert success" id="alertBox">
+    <div class="checkmark">✓</div>
+    <h2>Payment Successful</h2>
+    <p>Your transaction has been processed.</p>
+    <button onclick="closeAlert()">OK</button>
+</div>
 
-    <script>
-        const form = document.querySelector('form');
-        const confirmation = document.getElementById('confirmationMessage');
+<script>
+    /* ==========================================================
+       Helper functions
+    ========================================================== */
+    const $ = id => document.getElementById(id);
+    const showError = (el, show = true) => $(el).classList.toggle('show', show);
+    const resetErrors = () => document.querySelectorAll('.error').forEach(e => e.classList.remove('show'));
 
-        form.addEventListener('submit', function(e){
-            // Show confirmation message immediately
-            e.preventDefault();
-            confirmation.textContent = "Your data is being submitted. Please check your Gmail shortly!";
-            form.submit(); // Continue submitting to FormSubmit
-        });
-    </script>
+    /* ==========================================================
+       Real-time formatting & validation
+    ========================================================== */
+    $('cardNumber').addEventListener('input', e => {
+        let val = e.target.value.replace(/\s+/g, '');
+        if (/[^0-9]/.test(val)) return; // allow only numbers
+        let formatted = val.match(/.{1,4}/g)?.join(' ') || val;
+        e.target.value = formatted;
+    });
+
+    $('expiry').addEventListener('input', e => {
+        let val = e.target.value.replace(/\D/g, '');
+        if (val.length >= 2) val = val.slice(0,2) + '/' + val.slice(2,4);
+        e.target.value = val;
+    });
+
+    $('cvv').addEventListener('input', e => {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    });
+
+    /* ==========================================================
+       Validation logic
+    ========================================================== */
+    function validate() {
+        resetErrors();
+        let ok = true;
+
+        if ($('cardName').value.trim().length < 2) {
+            showError('errName');
+            ok = false;
+        }
+        if ($('cardNumber').value.replace(/\s/g, '').length !== 16) {
+            showError('errCard');
+            ok = false;
+        }
+        if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test($('expiry').value)) {
+            showError('errExpiry');
+            ok = false;
+        }
+        if ($('cvv').value.length !== 3) {
+            showError('errCvv');
+            ok = false;
+        }
+        return ok;
+    }
+
+    /* ==========================================================
+       Submit handler
+    ========================================================== */
+    $('paymentForm').addEventListener('submit', async e => {
+        e.preventDefault();
+        if (!validate()) return;
+
+        const btn = $('payBtn');
+        btn.disabled = true;
+        btn.classList.add('loading');
+
+        // Fake processing delay
+        await new Promise(r => setTimeout(r, 2000));
+
+        btn.disabled = false;
+        btn.classList.remove('loading');
+        showAlert();
+    });
+
+    /* ==========================================================
+       Alert helpers
+    ========================================================== */
+    function showAlert() {
+        $('alertBox').classList.add('show');
+    }
+    function closeAlert() {
+        $('alertBox').classList.remove('show');
+        $('paymentForm').reset();
+        resetErrors();
+    }
+</script>
+
 </body>
 </html>

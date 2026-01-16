@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akila Iduranga | Personal Website</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f5f7fa;
+  --text: #0f172a;
+  --card: #ffffff;
+  --primary: #0f766e;
+  --accent: #facc15;
+}
+
+body.dark {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --card: #0f172a;
+  --primary: #38bdf8;
+  --accent: #f97316;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+}
+
+header h1 {
+  color: var(--primary);
+}
+
+.toggle {
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--primary);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  padding: 60px 8%;
+  gap: 40px;
+}
+
+.hero img {
+  width: 260px;
+  border-radius: 50%;
+  border: 6px solid var(--primary);
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+}
+
+.hero span {
+  color: var(--primary);
+}
+
+.hero p {
+  margin: 15px 0;
+  opacity: 0.9;
+}
+
+.btns a {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+}
+
+.secondary-btn {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* Sections */
+section {
+  padding: 60px 8%;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Akila.</h1>
+  <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div>
+    <h2>Hi, I'm <span>Akila Iduranga</span></h2>
+    <p>Tech Content Creator | Web Developer | Student  
+    <br>Helping people learn technology in a simple way.</p>
+
+    <div class="btns">
+      <a href="#" class="primary-btn">Contact Me</a>
+      <a href="#" class="secondary-btn">View Work</a>
+    </div>
+  </div>
+
+  <div>
+    <!-- Replace image path -->
+    <img src="your-image.jpg" alt="Profile Image">
+  </div>
+</section>
+
+<!-- About -->
+<section>
+  <h3 class="section-title">About Me</h3>
+  <p>
+    I am a Sri Lankan tech enthusiast and content creator passionate about
+    web development, technology education, and digital creativity.
+    My goal is to build useful solutions and share knowledge with the community.
+  </p>
+</section>
+
+<!-- Skills -->
+<section>
+  <h3 class="section-title">Skills</h3>
+  <div class="cards">
+    <div class="card">HTML & CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Web Design</div>
+    <div class="card">Content Creation</div>
+    <div class="card">UI / UX Basics</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Akila Iduranga | Sri Lanka 🇱🇰
+</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

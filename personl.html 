@@ -201,6 +201,5 @@ function toggleMode() {
   document.body.classList.toggle("dark");
 }
 </script>
-
 </body>
 </html>

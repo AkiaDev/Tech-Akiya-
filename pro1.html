@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Requirement Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Website Requirement Form</h1>
+    <p class="subtitle">Please fill this form to help us understand your website needs</p>
+
+    <form id="clientForm">
+
+        <h2>Client / Business Details</h2>
+        <label>Business / Brand Name *</label>
+        <input type="text" id="brand" required>
+
+        <label>Business Type *</label>
+        <input type="text" id="type" placeholder="Shop / Service / Personal / Company" required>
+
+        <label>Target Audience</label>
+        <input type="text" id="audience">
+
+        <label>Website Language</label>
+        <select id="language">
+            <option>Sinhala</option>
+            <option>English</option>
+            <option>Tamil</option>
+            <option>Multi Language</option>
+        </select>
+
+        <h2>Website Purpose</h2>
+        <label>Website Goal *</label>
+        <select id="purpose" required>
+            <option value="">Select</option>
+            <option>Business Promotion</option>
+            <option>Sell Products</option>
+            <option>Get Leads</option>
+            <option>Portfolio</option>
+        </select>
+
+        <h2>Pages Needed</h2>
+        <div class="checkbox-group">
+            <label><input type="checkbox"> Home</label>
+            <label><input type="checkbox"> About</label>
+            <label><input type="checkbox"> Services</label>
+            <label><input type="checkbox"> Products</label>
+            <label><input type="checkbox"> Contact</label>
+            <label><input type="checkbox"> Blog</label>
+        </div>
+
+        <h2>Features</h2>
+        <div class="checkbox-group">
+            <label><input type="checkbox"> Contact Form</label>
+            <label><input type="checkbox"> WhatsApp Chat</label>
+            <label><input type="checkbox"> Google Map</label>
+            <label><input type="checkbox"> Admin Panel</label>
+            <label><input type="checkbox"> Payment System</label>
+        </div>
+
+        <h2>Design Preference</h2>
+        <label>Design Style</label>
+        <select>
+            <option>Simple</option>
+            <option>Modern</option>
+            <option>Luxury</option>
+            <option>Colorful</option>
+        </select>
+
+        <label>Reference Websites (optional)</label>
+        <input type="text" placeholder="https://example.com">
+
+        <h2>Technical</h2>
+        <label>Do you have Domain & Hosting?</label>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <h2>Timeline & Budget</h2>
+        <label>Expected Delivery Time</label>
+        <input type="text" placeholder="7 days / 14 days">
+
+        <label>Budget Range (LKR)</label>
+        <input type="number">
+
+        <label>Extra Notes</label>
+        <textarea rows="4"></textarea>
+
+        <button type="submit">Submit Details</button>
+        <p id="msg"></p>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

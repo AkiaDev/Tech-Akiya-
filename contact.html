@@ -1,0 +1,224 @@
+<!-- contact.html - CONTACT PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PATHUM HOTEL</title>
+    <meta name="description" content="Contact PATHUM HOTEL for reservations, inquiries, or orders. Reach us via WhatsApp, email, or visit our location.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">PATHUM HOTEL</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="items.html" class="nav-link">Menu</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header contact-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title reveal-text">Contact Us</h1>
+            <p class="page-subtitle reveal-text delay-1">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info reveal-left">
+                    <div class="section-header left-aligned">
+                        <span class="section-tag">Get In Touch</span>
+                        <h2 class="section-title">Contact Information</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <p class="contact-intro">Have questions or want to place an order? Reach out to us through any of the channels below. We typically respond within 24 hours.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:pathumhotel@gmail.com">pathumhotel@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/94783774720" target="_blank">078 377 4720</a>
+                                <a href="https://wa.me/94766739019" target="_blank">076 673 9019</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>PATHUM HOTEL, Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons-large">
+                            <a href="https://www.facebook.com/share/1EXR5hKzm1/" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://youtube.com/channel/UCuJ1dMptxkvLJoJjg5w-SEA?si=Rvk78qUBpcDuN3QG" target="_blank" class="social-icon youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://wa.me/94783774720" target="_blank" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper reveal-right">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send us a Message</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0!2d79.0!3d7.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDAnMDAuMCJOIDc5wrAwMCcwMC4wIkU!5e0!3m2!1sen!2slk!4v1234567890"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="PATHUM HOTEL Location">
+            </iframe>
+            <a href="https://maps.app.goo.gl/q7Z4cpu2WjMe91Yh9?g_st=aw" target="_blank" class="map-overlay-link">
+                <div class="map-overlay">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Open in Google Maps</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Quick Contact CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal-up">
+                <h2>Ready to Order?</h2>
+                <p>Skip the wait and order directly through WhatsApp for quick delivery or pickup.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/94783774720" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                    <a href="items.html" class="btn btn-outline-light">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">PATHUM HOTEL</h3>
+                    <p>Serving authentic Sri Lankan flavors with love since 2021.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1EXR5hKzm1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/channel/UCuJ1dMptxkvLJoJjg5w-SEA?si=Rvk78qUBpcDuN3QG" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/94783774720" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="items.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> pathumhotel@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 078 377 4720</p>
+                    <p><i class="fas fa-phone"></i> 076 673 9019</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PATHUM HOTEL – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/94783774720" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>

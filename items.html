@@ -1,0 +1,367 @@
+<!-- items.html - MENU PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | PATHUM HOTEL</title>
+    <meta name="description" content="Explore our delicious menu at PATHUM HOTEL. Sri Lankan rice, kottu, hoppers, snacks and beverages at affordable prices.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">PATHUM HOTEL</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="items.html" class="nav-link active">Menu</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title reveal-text">Our Menu</h1>
+            <p class="page-subtitle reveal-text delay-1">Authentic Sri Lankan flavors at affordable prices</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section section-padding">
+        <div class="container">
+            <!-- Category Filter -->
+            <div class="menu-filter reveal-up">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="main">Main Course</button>
+                <button class="filter-btn" data-filter="snack">Snacks</button>
+                <button class="filter-btn" data-filter="beverage">Beverages</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Rice -->
+                <div class="menu-card reveal-up" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/upload.wikimedia.org/0414a34ce665bc1de3e35d5777d2456c989ba37c.jpg" alt="Rice" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Rice</h3>
+                            <span class="menu-price">Rs. 800</span>
+                        </div>
+                        <p class="menu-desc">Steamed rice served with traditional Sri Lankan curries and sambols.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Rice - Rs. 800" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kottu -->
+                <div class="menu-card reveal-up delay-1" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.theflavorbender.com/e4eff3ca83f141ae0f4198943bf2439af55f3d80.jpg" alt="Kottu" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Kottu</h3>
+                            <span class="menu-price">Rs. 800</span>
+                        </div>
+                        <p class="menu-desc">Famous chopped roti dish with vegetables, eggs, and spices.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Kottu - Rs. 800" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noodles -->
+                <div class="menu-card reveal-up delay-2" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?w=400&h=300&fit=crop" alt="Noodles" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Noodles</h3>
+                            <span class="menu-price">Rs. 900</span>
+                        </div>
+                        <p class="menu-desc">Stir-fried noodles with vegetables and your choice of protein.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Noodles - Rs. 900" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pasta -->
+                <div class="menu-card reveal-up" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop" alt="Pasta" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Pasta</h3>
+                            <span class="menu-price">Rs. 1000</span>
+                        </div>
+                        <p class="menu-desc">Creamy pasta with rich sauce and fresh herbs.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Pasta - Rs. 1000" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Devil -->
+                <div class="menu-card reveal-up delay-1" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop" alt="Devil" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Devil</h3>
+                            <span class="menu-price">Rs. 650</span>
+                        </div>
+                        <p class="menu-desc">Spicy Sri Lankan devil chicken with onions and chili.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Devil - Rs. 650" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Samosa -->
+                <div class="menu-card reveal-up delay-2" data-category="snack">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/cdn.shopify.com/dc4b3a681ad490924d28f3ddb0e59764d8729230.webp" alt="Samosa" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Samosa</h3>
+                            <span class="menu-price">Rs. 25</span>
+                        </div>
+                        <p class="menu-desc">Crispy pastry filled with spiced potatoes and peas.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Samosa - Rs. 25" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Egg Roti -->
+                <div class="menu-card reveal-up" data-category="snack">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop" alt="Egg Roti" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Egg Roti</h3>
+                            <span class="menu-price">Rs. 150</span>
+                        </div>
+                        <p class="menu-desc">Flaky paratha roti with egg filling, perfectly grilled.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Egg Roti - Rs. 150" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hoppers -->
+                <div class="menu-card reveal-up delay-1" data-category="snack">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.hungrylankan.com/3d3efd3846f0f0c06ba2f5d5d79ff9e9590e340a.jpg" alt="Hoppers" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Hoppers</h3>
+                            <span class="menu-price">Rs. 25</span>
+                        </div>
+                        <p class="menu-desc">Bowl-shaped crispy pancakes made from fermented rice flour.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Hoppers - Rs. 25" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chicken Hopper -->
+                <div class="menu-card reveal-up delay-2" data-category="snack">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.hungrylankan.com/3d3efd3846f0f0c06ba2f5d5d79ff9e9590e340a.jpg" alt="Chicken Hopper" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Chicken Hopper</h3>
+                            <span class="menu-price">Rs. 170</span>
+                        </div>
+                        <p class="menu-desc">Crispy hopper filled with spiced chicken curry.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Chicken Hopper - Rs. 170" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Butter Wade -->
+                <div class="menu-card reveal-up" data-category="snack">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=300&fit=crop" alt="Butter Wade" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Butter Wade</h3>
+                            <span class="menu-price">Rs. 20</span>
+                        </div>
+                        <p class="menu-desc">Sweet butter cake - perfect with tea or coffee.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Butter Wade - Rs. 20" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plain Tea -->
+                <div class="menu-card reveal-up delay-1" data-category="beverage">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/9d75ad902355ff5ab9253e1c053ff7779505ad52.jpg" alt="Plain Tea" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Plain Tea</h3>
+                            <span class="menu-price">Rs. 40</span>
+                        </div>
+                        <p class="menu-desc">Authentic Ceylon black tea - strong and refreshing.</p>
+                        <div class="menu-footer">
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="https://wa.me/94783774720?text=I want to order Plain Tea - Rs. 40" target="_blank" class="btn btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">PATHUM HOTEL</h3>
+                    <p>Serving authentic Sri Lankan flavors with love since 2021.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1EXR5hKzm1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/channel/UCuJ1dMptxkvLJoJjg5w-SEA?si=Rvk78qUBpcDuN3QG" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/94783774720" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="items.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> pathumhotel@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 078 377 4720</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PATHUM HOTEL – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/94783774720" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
